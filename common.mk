@@ -343,10 +343,6 @@ PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/nfc/libnfc-nxp_RF.conf:$(TARGET_COPY_OUT_VENDOR)/libnfc-nxp_RF.conf \
    $(call find-copy-subdir-files,*,${LOCAL_PATH}/configs/nfc,$(TARGET_COPY_OUT_VENDOR)/etc)
 
-# OEM Unlock reporting
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.oem_unlock_supported=1
-
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -474,10 +470,6 @@ PRODUCT_PACKAGES += \
 
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
-
-# Verity
-PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
-$(call inherit-product, build/target/product/verity.mk)
 
 # Vibrator
 PRODUCT_PACKAGES += \
