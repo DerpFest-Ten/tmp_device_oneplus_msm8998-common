@@ -38,7 +38,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio new
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.audio.sdk.fluencetype=fluencepro \
+    ro.vendor.audio.sdk.fluencetype=none \
     persist.audio.fluence.voicecomm=true \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=true \
@@ -90,7 +90,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.external_dsp.enable=false \
     vendor.audio.feature.external_speaker.enable=false \
     vendor.audio.feature.external_speaker_tfa.enable=false \
-    vendor.audio.feature.fluence.enable=true \
+    vendor.audio.feature.fluence.enable=false \
     vendor.audio.feature.fm.enable=true \
     vendor.audio.feature.hdmi_edid.enable=true \
     vendor.audio.feature.hdmi_passthrough.enable=true \
