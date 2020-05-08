@@ -90,6 +90,8 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
+
+        <!-- Search Provider -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
             android:authorities="com.derp.device"

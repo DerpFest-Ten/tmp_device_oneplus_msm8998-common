@@ -21,8 +21,6 @@
     <string name="srgb_mode_title">sRGB modu</string>
     <string name="hbm_mode_summary"></string>
     <string name="hbm_mode_title">Yüksek parlaklık modu</string>
-    <string name="dc_mode_summary"></string>
-    <string name="dc_mode_title">DC-Karartma</string>
     <string name="adaptive_mode_title">Uyarlanabilir mod</string>
     <string name="oneplus_mode_title">OnePlus modu</string>
     <string name="dci_mode_summary"></string>
@@ -34,7 +32,6 @@
     <string name="off_mode_title">Kapalı</string>
     <string name="tile_panel_mode">Panel modları</string>
     <string name="tile_hbm_mode">Yüksek parlaklık modları</string>
-    <string name="tile_dc_mode">DC-Karartma</string>
     <!-- Notification slider -->
     <string name="notification_slider_category_title">Bildirim kaydırıcı</string>
     <string name="notification_slider_selection_dialog_title">Eylem</string>
@@ -52,8 +49,4 @@
     <string name="category_vibrator">Titreşim</string>
     <string name="vib_strength_title_head">Sistem yoğunluğu</string>
     <string name="vib_strength_summary_head">Titreşim yoğunluğunu tanımlayın</string>
-    <string name="vib_call_strength_title_head">Arama yoğunluğu</string>
-    <string name="vib_call_strength_summary_head">Gelen bir arama sırasında titreşim yoğunluğunu tanımlayın</string>
-    <string name="vib_notif_strength_title_head">Bildirim yoğunluğu</string>
-    <string name="vib_notif_strength_summary_head">Gelen bir bildirim sırasında titreşim yoğunluğunu tanımlayın</string>
 </resources>

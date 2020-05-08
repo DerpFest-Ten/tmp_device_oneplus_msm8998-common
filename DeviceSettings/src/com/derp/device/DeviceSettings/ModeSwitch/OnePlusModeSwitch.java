@@ -24,9 +24,11 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
 
+import com.derp.device.DeviceSettings.DeviceSettings;
+
 public class OnePlusModeSwitch implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/oneplus_mode";
+    private static final String FILE = "/sys/devices/virtual/graphics/fb0/oneplus_mode";
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
