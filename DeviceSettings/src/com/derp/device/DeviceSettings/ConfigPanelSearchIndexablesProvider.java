@@ -17,6 +17,7 @@
 
 package com.derp.device.DeviceSettings;
 
+
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.provider.SearchIndexableResource;

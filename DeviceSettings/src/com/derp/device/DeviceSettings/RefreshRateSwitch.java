@@ -19,33 +19,41 @@ package com.derp.device.DeviceSettings;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
 
-public class HBMModeSwitch implements OnPreferenceChangeListener {
+import com.derp.device.DeviceSettings.DeviceSettings;
 
-    private static final String FILE = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm";
+public class RefreshRateSwitch implements OnPreferenceChangeListener {
 
-    public static String getFile() {
-        if (Utils.fileWritable(FILE)) {
-            return FILE;
-        }
-        return null;
-    }
+    public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_REFRESH_RATE;
+    private Context mContext;
 
-    public static boolean isSupported() {
-        return Utils.fileWritable(getFile());
+    public RefreshRateSwitch(Context context) {
+        mContext = context;
     }
 
     public static boolean isCurrentlyEnabled(Context context) {
-        return Utils.getFileValueAsBoolean(getFile(), false);
+        return Settings.System.getFloat(context.getContentResolver(),
+                Settings.System.PEAK_REFRESH_RATE, 90f) == 90f;
+    }
+
+    public static void setPeakRefresh (Context context, boolean enabled) {
+        Settings.System.putFloat(context.getContentResolver(),
+                Settings.System.PEAK_REFRESH_RATE, enabled ? 90f : 60f);
+        Settings.System.putFloat(context.getContentResolver(),
+                Settings.System.MIN_REFRESH_RATE, enabled ? 90f : 60f);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
-        Utils.writeValue(getFile(), enabled ? "5" : "0");
+        Settings.System.putFloat(mContext.getContentResolver(),
+                Settings.System.PEAK_REFRESH_RATE, enabled ? 90f : 60f);
+        Settings.System.putFloat(mContext.getContentResolver(),
+                Settings.System.MIN_REFRESH_RATE, enabled ? 90f : 60f);
         return true;
     }
 }
